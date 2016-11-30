@@ -42,7 +42,7 @@ public class HighCharts {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "highChartGeoMap";
+		return "highcharts/highChartGeoMap";
 	}
 
 }
