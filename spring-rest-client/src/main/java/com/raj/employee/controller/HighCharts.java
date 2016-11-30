@@ -20,7 +20,7 @@ public class HighCharts {
 	
 	@RequestMapping(value="/highCharts", method=RequestMethod.GET)
 	public String highChartsPage(Model model){
-		return "high-charts";
+		return "highcharts/high-charts";
 	}
 	
 	@RequestMapping(value="/highChartData", method=RequestMethod.POST)

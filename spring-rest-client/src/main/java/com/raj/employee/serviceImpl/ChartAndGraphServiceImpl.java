@@ -23,20 +23,20 @@ import com.raj.project.configuration.ProjectConfiguration;
 
 @Service
 public class ChartAndGraphServiceImpl implements ChartAndGraphService{
-	
-	private HttpHeaders headers = null;
-	private HttpEntity<String> entity = null;
-	private RestTemplate restTemplate = null;
-	private String url = null;
-	private JSONObject input = null;
-	private JSONObject requestData = null;
-	private Gson gson = null;
-	private String serviceResponse = null;
-	
+
 	private static Logger LOGGER = Logger.getLogger(ChartAndGraphServiceImpl.class); 
-	
+
 	@Override
 	public List<KeyValueDto> areaWiseCountries() {
+		HttpHeaders headers = null;
+		HttpEntity<String> entity = null;
+		RestTemplate restTemplate = null;
+		String url = null;
+		JSONObject input = null;
+		JSONObject requestData = null;
+		Gson gson = null;
+		String serviceResponse = null;
+
 		List<KeyValueDto> list = new ArrayList<KeyValueDto>();
 		input = new JSONObject();
 		try {
@@ -68,6 +68,15 @@ public class ChartAndGraphServiceImpl implements ChartAndGraphService{
 
 	@Override
 	public List<String> getAllCountryCode() {
+		HttpHeaders headers = null;
+		HttpEntity<String> entity = null;
+		RestTemplate restTemplate = null;
+		String url = null;
+		JSONObject input = null;
+		JSONObject requestData = null;
+		Gson gson = null;
+		String serviceResponse = null;
+
 		List<String> list = new ArrayList<String>();
 		input = new JSONObject();
 		try {
@@ -99,6 +108,15 @@ public class ChartAndGraphServiceImpl implements ChartAndGraphService{
 
 	@Override
 	public List<CityDto> cityWisePopulation(String countryCode) {
+		HttpHeaders headers = null;
+		HttpEntity<String> entity = null;
+		RestTemplate restTemplate = null;
+		String url = null;
+		JSONObject input = null;
+		JSONObject requestData = null;
+		Gson gson = null;
+		String serviceResponse = null;
+
 		List<CityDto> list = new ArrayList<CityDto>();
 		input = new JSONObject();
 		input.put("countryCode", countryCode);
@@ -131,6 +149,15 @@ public class ChartAndGraphServiceImpl implements ChartAndGraphService{
 
 	@Override
 	public List<String> getStateNames() {
+		HttpHeaders headers = null;
+		HttpEntity<String> entity = null;
+		RestTemplate restTemplate = null;
+		String url = null;
+		JSONObject input = null;
+		JSONObject requestData = null;
+		Gson gson = null;
+		String serviceResponse = null;
+
 		List<String> list = new ArrayList<String>();
 		input = new JSONObject();
 		try {
@@ -164,6 +191,15 @@ public class ChartAndGraphServiceImpl implements ChartAndGraphService{
 
 	@Override
 	public List<CountryDto> stateWisePopulation(String stateName) {
+		HttpHeaders headers = null;
+		HttpEntity<String> entity = null;
+		RestTemplate restTemplate = null;
+		String url = null;
+		JSONObject input = null;
+		JSONObject requestData = null;
+		Gson gson = null;
+		String serviceResponse = null;
+
 		List<CountryDto> list = new ArrayList<CountryDto>();
 		input = new JSONObject();
 		input.put("stateName", stateName);
