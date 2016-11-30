@@ -11,7 +11,7 @@
 
 <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
 <!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
-<script type="text/javascript" src="<c:url value="/resources/js/lib/google-chart-jsapi.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/google-chart/google-chart-jsapi.js"/>"></script>
 
 
 <script type="text/javascript" src="<c:url value="/resources/js/lib/jquery-3.1.0.min.js"/>"></script>

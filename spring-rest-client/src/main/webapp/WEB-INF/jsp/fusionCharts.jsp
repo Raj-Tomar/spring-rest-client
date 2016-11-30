@@ -9,9 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Fusion Charts</title>
 
-<script type="text/javascript" src="<c:url value="/resources/js/lib/fusioncharts.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/lib/fusioncharts.charts.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/lib/fusioncharts.theme.fint.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/fusion-chart/fusioncharts.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/fusion-chart/fusioncharts.charts.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/fusion-chart/fusioncharts.theme.fint.js"/>"></script>
 
 <script type="text/javascript">
   FusionCharts.ready(function(){

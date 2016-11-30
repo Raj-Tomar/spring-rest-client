@@ -28,14 +28,15 @@ public class ProjectConfiguration implements InitializingBean {
 			configProduction();
 		}
 	}
-
-	private void configProduction() {
+	
+	private void configDevelopment() {
 		logger.info("Development Environment Configuration Start\n");
 		serviceUrl = properties.getProperty("com.raj.developement").trim();
 	}
 
-	private void configDevelopment() {
+	private void configProduction() {
 		logger.info("Development Environment Configuration Start\n");
 		serviceUrl = properties.getProperty("com.raj.production").trim();
 	}
+
 }

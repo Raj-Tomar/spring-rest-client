@@ -9,9 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>High-Charts</title>
 
-<script type="text/javascript" src="<c:url value="/resources/js/lib/highcharts-4.2.5.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/lib/high-chart-exporting-4.2.5.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/lib/highcharts-3d-4.2.5.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/high-chart/highcharts-4.2.5.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/high-chart/high-chart-exporting-4.2.5.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/high-chart/highcharts-3d-4.2.5.js"/>"></script>
 
 <script type="text/javascript" src="<c:url value="/resources/js/lib/jquery-3.1.0.min.js"/>"></script>
 
