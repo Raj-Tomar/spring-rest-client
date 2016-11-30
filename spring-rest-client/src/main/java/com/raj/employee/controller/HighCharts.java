@@ -35,14 +35,13 @@ public class HighCharts {
 		return list;
 	}
 	
+	@RequestMapping(value="/highCharts/lineCharts", method=RequestMethod.GET)
+	public String highChartLineCharts(){
+		return "highcharts/line-chart";
+	}
+	
 	@RequestMapping(value="/highChartGeoMap", method=RequestMethod.GET)
 	public String highChartGeoMap(){
-		try {
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		return "highcharts/highChartGeoMap";
 	}
-
 }
