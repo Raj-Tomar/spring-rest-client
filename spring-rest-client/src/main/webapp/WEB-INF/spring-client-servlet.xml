@@ -48,4 +48,6 @@
  	
  	<util:properties id="properties" location="classpath:spring-rest-client.properties" />
  	
+ 	<bean class="com.raj.util.WebServiceUtil"/>
+ 	
  </beans>

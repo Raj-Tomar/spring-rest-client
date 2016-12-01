@@ -40,8 +40,14 @@ public class HighCharts {
 		return "highcharts/line-chart";
 	}
 	
+	@RequestMapping(value="/highCharts/combo", method=RequestMethod.GET)
+	public String highChartCombo(){
+		return "highcharts/combinationChart";
+	}
+	
 	@RequestMapping(value="/highChartGeoMap", method=RequestMethod.GET)
 	public String highChartGeoMap(){
 		return "highcharts/highChartGeoMap";
 	}
+	
 }
