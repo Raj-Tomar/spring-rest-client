@@ -56,7 +56,7 @@ LineChart = {
 			var options = {
 					chart: {
 						renderTo: 'ajax-loaded-data',
-						//type: 'line'
+						type: 'line'
 					},
 					credits: {
 						enabled: false
@@ -108,7 +108,7 @@ LineChart = {
 								json.data.push(parseInt(serverData[i].population));
 							}
 						}
-						if(json.data.length > 10){
+						if(json.data.length > 5 && json.data.length < 10){
 							options.series.push(json);
 						}
 					}
