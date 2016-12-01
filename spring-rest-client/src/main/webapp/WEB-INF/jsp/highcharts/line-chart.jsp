@@ -8,9 +8,8 @@
 
 <script type="text/javascript" src="<c:url value="/resources/js/lib/jquery-3.1.0.min.js"/>"></script>
 <!-- High-Charts Libraries Start-->
-<script type="text/javascript" src="<c:url value="/resources/js/high-chart/highcharts-4.2.5.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/high-chart/high-chart-exporting-4.2.5.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/high-chart/highcharts-3d-4.2.5.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/high-chart/lib/highcharts.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/high-chart/lib/exporting.js"/>"></script>
 <!-- High-Charts Libraries End-->
 <script type="text/javascript" src="<c:url value="/resources/js/high-chart/user/line-charts.js"/>"></script>
 </head>
@@ -19,8 +18,9 @@
 <h3 align="center">Basic Line Chart</h3>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<h3 align="center">Ajax Loaded Line Chart</h3>
-<input type="hidden" id="highChart-LineChartUrl" value="<c:url value="/highChartData"/>">
+<h3 align="center">Ajax Loaded Data - Line Chart</h3>
+<input type="hidden" id="highChart-getPopulation" value="<c:url value="/getPopulation"/>">
+<input type="hidden" id="highChart-getAllCountryCode" value="<c:url value="/getAllCountryCode"/>">
 <div id="ajax-loaded-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <script type="text/javascript">

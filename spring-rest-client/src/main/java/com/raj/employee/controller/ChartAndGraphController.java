@@ -66,4 +66,16 @@ public class ChartAndGraphController {
 		}
 		return list;
 	}
+	
+	@RequestMapping(value="/getPopulation", method=RequestMethod.POST)
+	@ResponseBody
+	public List<CityDto> getPopulation(){
+		List<CityDto> list = null;
+		try {
+			list = chartService.getPopulation();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

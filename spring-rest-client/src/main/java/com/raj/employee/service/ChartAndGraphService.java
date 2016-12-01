@@ -35,4 +35,9 @@ public interface ChartAndGraphService {
 	 */
 	public List<CountryDto> stateWisePopulation(String stateName);
 
+	/**
+	 * @return
+	 */
+	public List<CityDto> getPopulation();
+
 }

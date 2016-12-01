@@ -2,6 +2,9 @@ LineChart = {
 		// Basic Line Charts with Static Data
 		BasicLineChart : function(){
 			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},
 				title: {
 					text: 'Monthly Average Temperature',
 					x: -20 //center
@@ -48,12 +51,15 @@ LineChart = {
 				}]
 			});
 		},
-		
+
 		AjaxLoadedLineChart : function(){
 			var options = {
 					chart: {
 						renderTo: 'ajax-loaded-data',
-						type: 'line'
+						//type: 'line'
+					},
+					credits: {
+						enabled: false
 					},
 					title: {
 						text: 'Monthly Average Temperature',
@@ -69,7 +75,7 @@ LineChart = {
 					},
 					yAxis: {
 						title: {
-							text: 'Temperature (°C)'
+							text: 'Population (Milions)'
 						},
 						plotLines: [{
 							value: 0,
@@ -78,7 +84,7 @@ LineChart = {
 						}]
 					},
 					tooltip: {
-						valueSuffix: '°C'
+						valueSuffix: 'Milion'
 					},
 					legend: {
 						layout: 'vertical',
@@ -88,17 +94,26 @@ LineChart = {
 					},
 					series: []
 			};
-			
-			$.post($('#highChart-LineChartUrl').val(), function(serverData) {
-				console.log(serverData)
-		        for(i=0; i<serverData.length; i++){
-		        	var json = {
-		        		name : serverData[i].key,
-		        		data : [parseInt(serverData[i].value)],
-		        	}
-		        	options.series.push(json);
-		        }
-		        var chart = new Highcharts.Chart(options);
-		    });
+
+			$.post($('#highChart-getAllCountryCode').val(), function(countryCodesFromServer){
+				$.post($('#highChart-getPopulation').val(), function(serverData) {
+					for(c=0; c < countryCodesFromServer.length; c++){
+						var json = {
+								name : null,
+								data : []
+						}
+						for(i=0; i<serverData.length; i++){
+							if(countryCodesFromServer[c] == serverData[i].countryCode){
+								json.name = countryCodesFromServer[c];
+								json.data.push(parseInt(serverData[i].population));
+							}
+						}
+						if(json.data.length > 10){
+							options.series.push(json);
+						}
+					}
+					var chart = new Highcharts.Chart(options);
+				});
+			});
 		},
 }

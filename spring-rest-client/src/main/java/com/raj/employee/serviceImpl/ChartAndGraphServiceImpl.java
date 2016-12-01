@@ -230,4 +230,43 @@ public class ChartAndGraphServiceImpl implements ChartAndGraphService{
 		return list;
 	}
 
+	@Override
+	public List<CityDto> getPopulation() {
+		HttpHeaders headers = null;
+		HttpEntity<String> entity = null;
+		RestTemplate restTemplate = null;
+		String url = null;
+		JSONObject input = null;
+		JSONObject requestData = null;
+		Gson gson = null;
+		String serviceResponse = null;
+		List<CityDto> list = new ArrayList<CityDto>();
+		try {
+			requestData = new JSONObject();
+			requestData.put("requestData", input);
+			headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			entity = new HttpEntity<String>(requestData.toString(), headers);
+			url = ProjectConfiguration.serviceUrl + "/getPopulation";
+			restTemplate = new RestTemplate();
+			serviceResponse = restTemplate.postForObject(url, entity, String.class);
+			JSONObject jObj = new JSONObject(serviceResponse);
+			String status = jObj.getString("status");
+			if(status.equals("1")){
+				gson = new Gson();
+				JSONArray jArray = jObj.getJSONArray("population");
+				
+				for(int i=0; i<jArray.length(); i++){
+					CityDto dto = gson.fromJson(jArray.get(i).toString(), CityDto.class);
+					list.add(dto);
+				}
+				if(LOGGER.isInfoEnabled())
+					LOGGER.info("Total Cities: "+list.size());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 }
