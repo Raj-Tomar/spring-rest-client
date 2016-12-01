@@ -83,15 +83,89 @@ LineChart = {
 							color: '#808080'
 						}]
 					},
-					tooltip: {
-						valueSuffix: 'Milion'
-					},
-					legend: {
+					/*legend: {
 						layout: 'vertical',
 						align: 'right',
 						verticalAlign: 'middle',
 						borderWidth: 0
 					},
+					tooltip: {
+						valueSuffix: 'Milion'
+					},
+					*/
+					/*xAxis: {
+		                tickInterval: 7 * 24 * 3600 * 1000, // one week
+		                tickWidth: 0,
+		                gridLineWidth: 1,
+		                labels: {
+		                    align: 'left',
+		                    x: 3,
+		                    y: -3
+		                }
+		            },
+		            yAxis: [{ // left y axis
+		                title: {
+		                    text: null
+		                },
+		                labels: {
+		                    align: 'left',
+		                    x: 3,
+		                    y: 16,
+		                    format: '{value:.,0f}'
+		                },
+		                showFirstLabel: false
+		            }, { // right y axis
+		                linkedTo: 0,
+		                gridLineWidth: 0,
+		                opposite: true,
+		                title: {
+		                    text: null
+		                },
+		                labels: {
+		                    align: 'right',
+		                    x: -3,
+		                    y: 16,
+		                    format: '{value:.,0f}'
+		                },
+		                showFirstLabel: false
+		            }],
+		            */
+		            legend: {
+		            	layout: 'vertical',
+		            	align: 'right',
+		                verticalAlign: 'middle',
+		                y: 20,
+		                floating: true,
+		                borderWidth: 0
+		            },
+		            tooltip: {
+		                shared: true,
+		                crosshairs: true
+		            },
+		            plotOptions: {
+		                series: {
+		                    cursor: 'pointer',
+		                    point: {
+		                        events: {
+		                            click: function (e) {
+		                                hs.htmlExpand(null, {
+		                                    pageOrigin: {
+		                                        x: e.pageX || e.clientX,
+		                                        y: e.pageY || e.clientY
+		                                    },
+		                                    headingText: this.series.name,
+		                                    maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+		                                        this.y + ' Population',
+		                                    width: 200
+		                                });
+		                            }
+		                        }
+		                    },
+		                    marker: {
+		                        lineWidth: 1
+		                    }
+		                }
+		            },
 					series: []
 			};
 
@@ -100,6 +174,10 @@ LineChart = {
 					for(c=0; c < countryCodesFromServer.length; c++){
 						var json = {
 								name : null,
+								lineWidth: 4,
+								marker: {
+				                    radius: 4
+				                },
 								data : []
 						}
 						for(i=0; i<serverData.length; i++){
@@ -108,7 +186,7 @@ LineChart = {
 								json.data.push(parseInt(serverData[i].population));
 							}
 						}
-						if(json.data.length > 5 && json.data.length < 10){
+						if(json.data.length > 8 && json.data.length < 10){
 							options.series.push(json);
 						}
 					}
