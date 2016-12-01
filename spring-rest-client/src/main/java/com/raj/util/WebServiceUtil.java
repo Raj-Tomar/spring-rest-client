@@ -16,7 +16,6 @@ public class WebServiceUtil {
 	/**
 	 * @param inputJson
 	 * @param url
-	 * @param sessionId
 	 * @param startPoint
 	 * @param pageLimit
 	 * @return
@@ -49,7 +48,7 @@ public class WebServiceUtil {
 	 * @return
 	 */
 	public String getStatus(Object inputJson, String url, String startPoint, String pageLimit){
-		String status = null;
+		String status = "0";
 		try {
 			String webServiceResponse = webServiceCall(inputJson, url, startPoint, pageLimit);
 			JSONObject responseJSon = new JSONObject( webServiceResponse );
