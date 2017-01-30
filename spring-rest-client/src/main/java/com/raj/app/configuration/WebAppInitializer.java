@@ -1,4 +1,4 @@
-/*package com.raj.app.configuration;
+package com.raj.app.configuration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -25,4 +25,3 @@ public class WebAppInitializer implements WebApplicationInitializer {
 	}
 
 }
-*/

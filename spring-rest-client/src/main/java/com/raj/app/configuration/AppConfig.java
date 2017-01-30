@@ -1,14 +1,15 @@
-/*package com.raj.app.configuration;
+package com.raj.app.configuration;
 
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -23,13 +24,14 @@ import com.raj.util.WebServiceUtil;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = { "com.raj.employee.controller",
-								"com.raj.employee.serviceImpl" })
-@PropertySource(name = "environment", value = {"classpath:spring-rest-client.properties"})
+@ComponentScan(basePackages = {"com.raj.project.environment", 
+								"com.raj.employee.controller",
+								"com.raj.employee.serviceImpl"
+								})
 public class AppConfig extends WebMvcConfigurerAdapter {
 	
 	@Autowired
-    Environment env;
+    Environment environment;
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -50,11 +52,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/**").addResourceLocations("/");
 	}
 	
-	
+	/*
 	@Bean(name = "multipartResolver")
 	public CommonsMultipartResolver getMultipartResolver() {
 		return new CommonsMultipartResolver();
-	}
+	}*/
 	 
 
 	// Locale Configuration Start
@@ -69,12 +71,12 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public LocaleResolver localeResolver() {
-		
-		 * CookieLocaleResolver resolver = new CookieLocaleResolver();
-		 * resolver.setDefaultLocale(new Locale("en"));
-		 * resolver.setCookieName("myLocaleCookie");
-		 * resolver.setCookieMaxAge(4800); return resolver;
-		 
+		/*
+		 CookieLocaleResolver resolver = new CookieLocaleResolver();
+		 resolver.setDefaultLocale(new Locale("en"));
+		 resolver.setCookieName("myLocaleCookie");
+		 resolver.setCookieMaxAge(4800); return resolver;
+		*/ 
 		SessionLocaleResolver resolver = new SessionLocaleResolver();
 		resolver.setDefaultLocale(new Locale("en"));
 		return resolver;
@@ -88,11 +90,19 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	}
 	// Locale Configuration End
 	
+	// Properties file configuration
+	@Bean(name = "properties")
+	public PropertiesFactoryBean mapper() {
+	    PropertiesFactoryBean bean = new PropertiesFactoryBean();
+	    bean.setLocation(new ClassPathResource("spring-rest-client.properties"));
+	    return bean;
+	}
+	
 	
 	// WebService Utility Class Bean
 	@Bean(name = "webService")
 	public WebServiceUtil webServiceUtil() {
 		return new WebServiceUtil();
 	}
+	
 }
-*/
