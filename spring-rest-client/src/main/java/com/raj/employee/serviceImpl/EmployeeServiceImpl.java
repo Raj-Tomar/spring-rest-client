@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.google.gson.Gson;
 import com.raj.employee.dto.EmployeeDto;
 import com.raj.employee.service.EmployeeService;
-import com.raj.project.configuration.ProjectConfiguration;
+import com.raj.project.environment.ProjectConfiguration;
 import com.raj.util.WebServiceUtil;
 
 @Service

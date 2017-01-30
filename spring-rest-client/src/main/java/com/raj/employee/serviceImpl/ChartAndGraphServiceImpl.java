@@ -16,7 +16,7 @@ import com.raj.employee.dto.CityDto;
 import com.raj.employee.dto.CountryDto;
 import com.raj.employee.dto.KeyValueDto;
 import com.raj.employee.service.ChartAndGraphService;
-import com.raj.project.configuration.ProjectConfiguration;
+import com.raj.project.environment.ProjectConfiguration;
 import com.raj.util.WebServiceUtil;
 
 @Service

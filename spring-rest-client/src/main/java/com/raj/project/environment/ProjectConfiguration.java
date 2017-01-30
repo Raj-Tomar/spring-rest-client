@@ -1,4 +1,4 @@
-package com.raj.project.configuration;
+package com.raj.project.environment;
 
 import java.util.Properties;
 
