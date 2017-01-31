@@ -49,7 +49,7 @@
       <table align="center">
       <c:if test="${!empty employee.id}">
        <tr>
-           <td><form:label path="id">Employee ID:</form:label></td>
+           <td><form:label path="id"><spring:message code="label.employee.id"/>:</form:label></td>
            <td><form:input path="id" readonly="true" id="employeeId"/></td>
        </tr>
        </c:if>
@@ -59,16 +59,16 @@
            <td><form:input path="firstName" id="firstName"/></td>
        </tr>
        <tr>
-           <td><form:label path="lastName">Last Name:</form:label></td>
+           <td><form:label path="lastName"><spring:message code="label.lastname"/>:</form:label></td>
            <td><form:input path="lastName" id="lastName"/></td>
        </tr>
        <tr>
-           <td><form:label path="designation"><em>*</em>Designation:</form:label></td>
+           <td><form:label path="designation"><em>*</em><spring:message code="label.designation"/>:</form:label></td>
            <td><form:input path="designation" id="designation"/></td>
        </tr>
        
        <tr>
-           <td><form:label path="companyName"><em>*</em>Company Name:</form:label></td>
+           <td><form:label path="companyName"><em>*</em><spring:message code="label.company.name"/>:</form:label></td>
            <td><form:input path="companyName" id="companyName"/></td>
        </tr>
           <tr>

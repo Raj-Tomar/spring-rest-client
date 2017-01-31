@@ -1,6 +1,6 @@
 var Employee = {
 		// Datatable ajax server-side pagination
-		getSellHistory : function(){
+		getEmployees : function(){
 			var uid = $("#uid").val();
 			if(uid != undefined && uid != "" && uid != null){
 				$('#Employee').DataTable( {
@@ -40,7 +40,7 @@ var Employee = {
 			        "paging"		: false,
 			        "scrollY"		: "130px",
 					"ajax": {
-					    "url": "getSellHistory/"+uid,
+					    "url": "getEmployee/"+uid,
 					    "type": "POST",
 					    "data": function ( d ) {
 					      JSON.stringify( d );
@@ -58,28 +58,28 @@ var Employee = {
 		
 }
 
-
+/*
 $(document).ready(function() {
 	var table = $('#example2').DataTable({
 		   scrollY:        '50vh',
 	    scrollCollapse: true,
 	    paging:         false,
 		   "ajax": {
-	         "url": "getRepTypMasters",
+	         "url": "getCities",
 	         "type": "POST",
 	         "dataSrc": ""
 	     },
 	     "columns": [
-	                 { "data": "rn" },
-	                 { "data": "cn" },
-	                 { "data": "rd" },
+	                 { "data": "Name" },
+	                 { "data": "Population" },
+	                 { "data": "Area" },
 	                 { 
 	                 	"data": null,
 	                 	//"defaultContent":'<a class="repEdit" href="#" style="color:#000;text-decoration:none;"><img src="<c:url value="/resources/images/edit.png" />" height="12px" width="12px" title="Edit"/> Edit</a>'
 	                 	"defaultContent":"<button>Edit</button>"
 	                 },
 	                 { 
-		                   	"data": "rs",
+		                   	"data": "name",
 	                     render: function (data, type, row) {
 	                         var ddl = "<select>";
 	                         for (var i = 0; i < data.length; i++) {
@@ -120,3 +120,4 @@ $(document).ready(function() {
 	 
 	});
 	
+*/
