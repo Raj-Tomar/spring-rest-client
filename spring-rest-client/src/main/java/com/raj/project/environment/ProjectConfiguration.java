@@ -22,20 +22,20 @@ public class ProjectConfiguration implements InitializingBean {
 		final String currentEnviroment = properties.getProperty("projecct.environment").trim();
 		logger.info("Current Environment: "+currentEnviroment);
 		if("development".equalsIgnoreCase(currentEnviroment)){
+			logger.info("Development Environment Configuration Start\n");
 			configDevelopment();
 		}
 		else if("production".equalsIgnoreCase(currentEnviroment)){
+			logger.info("Production Environment Configuration Start\n");
 			configProduction();
 		}
 	}
 	
 	private void configDevelopment() {
-		logger.info("Development Environment Configuration Start\n");
 		serviceUrl = properties.getProperty("com.raj.developement").trim();
 	}
 
 	private void configProduction() {
-		logger.info("Development Environment Configuration Start\n");
 		serviceUrl = properties.getProperty("com.raj.production").trim();
 	}
 
